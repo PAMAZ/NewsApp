@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Non ci sono news da visualizzare" />
+        android:text="@string/empty_state_label" />
 
     <Button
         android:id="@+id/retry_button"
@@ -16,6 +16,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="Riprova" />
+        android:text="@string/retry" />
 
 </LinearLayout>
