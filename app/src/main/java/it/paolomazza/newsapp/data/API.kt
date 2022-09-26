@@ -1,6 +1,6 @@
 package it.paolomazza.newsapp.data
 
-import it.paolomazza.newsapp.network.GetNewsListDTO
+import it.paolomazza.newsapp.data.dto.GetNewsListDTO
 import it.paolomazza.newsapp.utils.Constants
 import retrofit2.http.GET
 import retrofit2.http.Headers

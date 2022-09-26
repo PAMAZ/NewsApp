@@ -2,7 +2,7 @@ package it.paolomazza.newsapp.data.mapper
 
 import it.paolomazza.newsapp.data.entity.NewsListModel
 import it.paolomazza.newsapp.data.entity.NewsModel
-import it.paolomazza.newsapp.network.GetNewsListDTO
+import it.paolomazza.newsapp.data.dto.GetNewsListDTO
 import it.paolomazza.newsapp.utils.TimeUtils.timestampToDate
 
 object NewsListConverter {

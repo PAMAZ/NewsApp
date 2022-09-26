@@ -1,4 +1,4 @@
-package it.paolomazza.newsapp.network
+package it.paolomazza.newsapp.data.dto
 
 import com.google.gson.annotations.SerializedName
 
