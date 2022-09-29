@@ -14,6 +14,7 @@ import it.paolomazza.newsapp.presentation.State
 import it.paolomazza.newsapp.utils.Constants.DEFAULT_NEWS_LIMIT
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -34,8 +35,11 @@ class NewsRepository @Inject constructor(
             }
     ).flow
 
-    suspend fun getNewsDetail(id: Int): State<NewsDetailModel> = newsApi.getNewsDetail(id).toResult { dto ->
-        dto.toNewsDetailModel()
-    }
+    suspend fun getNewsDetail(id: Int): State<NewsDetailModel> =
+            withContext(dispatcher) {
+                newsApi.getNewsDetail(id).toResult { dto ->
+                    dto.toNewsDetailModel()
+                }
+            }
 
 }
