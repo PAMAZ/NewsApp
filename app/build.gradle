@@ -27,6 +27,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+
     buildFeatures {
         dataBinding true
         viewBinding true

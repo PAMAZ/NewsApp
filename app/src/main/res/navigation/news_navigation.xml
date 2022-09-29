@@ -7,6 +7,19 @@
     <fragment
         android:id="@+id/newsListFragment"
         android:name="it.paolomazza.newsapp.presentation.fragment.NewsListFragment"
-        android:label="NewsListFragment" />
+        android:label="NewsListFragment">
+        <action
+            android:id="@+id/action_newsListFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment"
+            app:popUpTo="@+id/newsListFragment">
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="it.paolomazza.newsapp.presentation.fragment.NewsDetailFragment"
+        android:label="NewsDetailFragment">
+    </fragment>
+
 
 </navigation>

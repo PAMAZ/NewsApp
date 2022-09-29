@@ -12,7 +12,7 @@ import it.paolomazza.newsapp.presentation.adapter.item.NewsType
 import it.paolomazza.newsapp.presentation.adapter.item.NewsViewHolder
 import it.paolomazza.newsapp.presentation.adapter.view_holder.BaseViewHolder
 
-class NewsAdapter : PagingDataAdapter<BaseItem, BaseViewHolder>(AdapterDiffCallBack()) {
+class NewsAdapter(private val clickListenerCallBack: (Int) -> Unit) : PagingDataAdapter<BaseItem, BaseViewHolder>(AdapterDiffCallBack()) {
 
     private class AdapterDiffCallBack : DiffUtil.ItemCallback<BaseItem>() {
         override fun areItemsTheSame(oldItem: BaseItem, newItem: BaseItem): Boolean =
@@ -30,7 +30,7 @@ class NewsAdapter : PagingDataAdapter<BaseItem, BaseViewHolder>(AdapterDiffCallB
         return when (NewsType.valueOf(viewType)) {
             NewsType.NEWS -> NewsViewHolder(ItemNewsBinding.inflate(LayoutInflater.from(parent.context),
                                                                     parent,
-                                                                    false))
+                                                                    false),clickListenerCallBack)
             NewsType.UNKNOWN -> TODO()
         }
     }

@@ -1,9 +1,6 @@
 package it.paolomazza.newsapp.domain
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.map
@@ -20,9 +17,8 @@ class NewsViewModel @Inject constructor(
         private val newsUseCase: NewsUseCase):ViewModel() {
 
     private val _privateNewsLiveData = MutableLiveData<PagingData<out BaseItem>>()
-    val newsLiveData: LiveData<PagingData<out BaseItem>> = _privateNewsLiveData
+    val newsLiveData: LiveData<PagingData<out BaseItem>> = _privateNewsLiveData.distinctUntilChanged()
 
-    @Suppress("UNCHECKED")
     fun getNewsList() {
         viewModelScope.launch {
              newsUseCase.getNewsApi().map { pagingdata ->

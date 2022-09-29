@@ -15,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
+            android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@id/progress_bar_news"
             app:layout_constraintTop_toTopOf="parent"
@@ -35,7 +36,7 @@
         </include>
 
         <include
-            layout="@layout/error_empty_list"
+            layout="@layout/error_view"
             android:id="@+id/error_list_view"
             android:visibility="gone"
             android:layout_width="match_parent"
